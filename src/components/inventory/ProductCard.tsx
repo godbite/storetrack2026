@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Card, Image, VStack, HStack, Text, Badge } from "@chakra-ui/react";
 import type { Product } from "@/types/product";
-import { formatPrice, formatStockStatus, getStockStatusColor } from "@/utils/formatters";
+import {
+  formatPrice,
+  formatStockStatus,
+  getStockStatusColor,
+} from "@/utils/formatters";
 
 interface ProductCardProps {
   product: Product;
@@ -9,7 +13,10 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const stockColor = getStockStatusColor(product.stock);
-  const stockStatus = formatStockStatus(product.stock, product.availabilityStatus);
+  const stockStatus = formatStockStatus(
+    product.stock,
+    product.availabilityStatus
+  );
 
   return (
     <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
@@ -34,7 +41,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             alt={product.title}
             width="100%"
             height="200px"
-            objectFit="cover"
+            objectFit="contain"
+            objectPosition="center"
+            p={4}
+            bg="whiteAlpha.50"
             borderTopRadius="md"
           />
           <VStack align="stretch" p={4} gap={2}>
@@ -59,7 +69,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 </Badge>
               )}
             </HStack>
-            <HStack justify="space-between" fontSize="sm" color="whiteAlpha.700">
+            <HStack
+              justify="space-between"
+              fontSize="sm"
+              color="whiteAlpha.700"
+            >
               <Text>{product.brand}</Text>
               <Text>{product.category}</Text>
             </HStack>

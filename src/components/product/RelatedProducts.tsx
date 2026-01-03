@@ -88,7 +88,9 @@ export const RelatedProducts = ({
 
   return (
     <VStack align="stretch" gap={4} mt={8}>
-      <Heading size="lg">Browse Similar Products</Heading>
+      <Heading size="lg" color="white">
+        Browse Similar Products
+      </Heading>
       <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap={4}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
