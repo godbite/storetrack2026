@@ -452,7 +452,9 @@ export const HomePage = () => {
                         transform: "translateX(4px)",
                       }}
                     >
-                      <Text>Browse Categories</Text>
+                      <Text color="white" fontWeight="700">
+                        Browse Categories
+                      </Text>
                       <Box transition="transform 0.3s">
                         <FaArrowRight />
                       </Box>
